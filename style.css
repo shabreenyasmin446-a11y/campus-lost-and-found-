@@ -1,0 +1,360 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.14), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.14), transparent 36%),
+    linear-gradient(135deg, #f8fafc, #eef2ff 55%, #f8fafc);
+background-attachment: fixed;
+    color: #333;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.action-buttons button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 8px;
+    transition: background-color 0.2s;
+}
+
+.action-buttons button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Form Styling */
+.form-container {
+    display: none;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+}
+
+.form-container h2 {
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    flex: 2;
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cancel-btn {
+    flex: 1;
+    background-color: #94a3b8;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Controls Section */
+.controls-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.filter-btn {
+    background-color: #e2e8f0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #475569;
+}
+
+.filter-btn.active {
+    background-color: #0f172a;
+    color: white;
+}
+
+#searchInput {
+    width: 300px;
+    padding: 10px;
+    margin: 0;
+}
+
+/* Items Grid & Cards */
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.item-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid #cbd5e1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-card.type-lost {
+    border-left-color: #ef4444; /* Red border for Lost */
+}
+
+.item-card.type-found {
+    border-left-color: #10b981; /* Green border for Found */
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 12px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.badge-lost { background-color: #ef4444; }
+.badge-found { background-color: #10b981; }
+
+.item-card h3 {
+    font-size: 18px;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.item-card p {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 6px;
+}
+
+.delete-btn {
+    margin-top: 15px;
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+}
+
+.delete-btn:hover {
+    background-color: #fecaca;
+}
+#formContainer {
+  display: none;
+}
+.form-container {
+    display: none;
+    width: 100%;
+    max-width: 768px;
+    margin: 20px auto 32px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
+
+.form-container h2 {
+    margin-bottom: 24px;
+    font-size: 36px;
+    color: #1e293b;
+}
+
+.form-container label {
+    margin-top: 18px;
+    font-size: 20px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    min-height: 58px;
+    padding: 14px 16px;
+    font-size: 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+}
+
+.form-container textarea {
+    min-height: 124px;
+}
+
+.form-container .form-actions {
+    margin-top: 24px;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        padding: 24px 18px;
+    }
+
+    .form-container h2 {
+        font-size: 28px;
+    }
+}
+.items-grid {
+    align-items: start;
+}
+
+.item-card {
+    justify-content: flex-start;
+}
+/* Purple and teal Lost & Found theme */
+html {
+    min-height: 100%;
+    background: linear-gradient(135deg, #160b2c, #25113d 60%, #102a3a);
+    background-attachment: fixed;
+}
+
+body {
+    background: transparent;
+    color: #f5f3fa;
+}
+
+header h1,
+main > h2 {
+    color: #ffffff;
+}
+
+header p {
+    color: #d4c9e8;
+}
+
+.action-buttons button,
+.submit-btn,
+.filter-btn.active {
+    background: #00a3a6;
+    color: #ffffff;
+}
+
+.form-container {
+    background: #f8f7fb;
+    color: #24143b;
+    border-top: 5px solid #00a3a6;
+    border-radius: 18px;
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.35);
+}
+
+.form-container h2 {
+    color: #24143b;
+}
+
+.form-container label {
+    color: #34234b;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea,
+#searchInput {
+    background: #ffffff;
+    color: #24143b;
+    border: 1px solid #d8d1e3;
+    border-radius: 10px;
+}
+
+.filter-btn {
+    background: #eeeaf5;
+    color: #34234b;
+}
+
+.item-card {
+    background: #f8f7fb;
+    border-radius: 16px;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.28);
+}
+
+.item-card.type-found {
+    border-left-color: #00a3a6;
+}
+
+.item-card.type-lost {
+    border-left-color: #e84c88;
+}
+
+.item-card h3 {
+    color: #24143b;
+}
+
+.item-card p {
+    color: #625b70;
+}
+
+.badge-found {
+    background: #00a3a6;
+}
+
+.badge-lost {
+    background: #e84c88;
+}
